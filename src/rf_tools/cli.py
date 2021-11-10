@@ -19,15 +19,15 @@ subparsers = parser.add_subparsers(dest='subparser_name', title='subcommands', h
 parser_setup = subparsers.add_parser("setup", help="create a simple barcode based deplete/enrich experiment TOML.")
 parser_setup.set_defaults(func=barcoding_adventure)
 parser_setup.add_argument("--toml", type=Path, help="Path to the TOML file.", required=True)
-parser_setup.add_argument("--no-minknow", action="store_true", default=False, help="Do not attempt to use the minknow API")
+parser_setup.add_argument("--no-minknow", action="store_true", default=False, help="Do not attempt to use the minknow API, default False.")
 parser_setup.add_argument(
-    "--mk-host", default="localhost", help="Address for connecting to MinKNOW",
+    "--mk-host", default="localhost", help="Address for connecting to MinKNOW, default localhost.",
 )
 parser_setup.add_argument(
-    "--mk-port", default=9501, help="Port for connecting to MinKNOW",
+    "--mk-port", default=9501, help="Port for connecting to MinKNOW, default 9501.",
 )
 parser_setup.add_argument(
-    "--use_tls", action="store_true", help="Use TLS for connecting to MinKNOW",
+    "--use_tls", action="store_true", help="Use TLS for connecting to MinKNOW, default False.",
 )
 parser_setup.add_argument(
     "--adventure", action="store_true", help="How about a little light role play?", default=False
